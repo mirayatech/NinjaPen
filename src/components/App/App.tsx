@@ -1,8 +1,9 @@
 import { CodeEditor } from "../CodeEditor/CodeEditor";
+import "./App.css";
 
 export default function App() {
   return (
-    <div>
+    <div className="pane top-pane">
       <CodeEditor
         language="xml"
         displayName="HTML"
