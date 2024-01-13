@@ -34,6 +34,21 @@
   color: var(--title-background-color);
 }
 
+.codeEditorTitle .htmlIcon {
+  background-color: var(--html);
+  font-size: var(--font-size);
+}
+
+.codeEditorTitle .cssIcon {
+  background-color: var(--css);
+  font-size: 0.6rem;
+}
+
+.codeEditorTitle .javascriptIcon {
+  background-color: var(--javascript);
+  font-size: var(--font-size);
+}
+
 .codeEditorButton {
   background: none;
   border: none;

@@ -6,6 +6,10 @@ import "codemirror/mode/css/css";
 import "./CodeEditor.css";
 import { Controlled as ControlledEditor } from "react-codemirror2";
 import { FaExpand } from "react-icons/fa";
+import { LuParentheses } from "react-icons/lu";
+import { FaStarOfLife } from "react-icons/fa6";
+import { RxSlash } from "react-icons/rx";
+
 type CodeEditorProps = {
   language: string;
   displayName: string;
@@ -19,10 +23,34 @@ export function CodeEditor({
   value,
   onChange,
 }: CodeEditorProps) {
+  let iconComponent;
+
+  if (displayName === "HTML") {
+    iconComponent = (
+      <span className="htmlIcon">
+        <RxSlash />
+      </span>
+    );
+  } else if (displayName === "JavaScript") {
+    iconComponent = (
+      <span className="javascriptIcon">
+        <LuParentheses />
+      </span>
+    );
+  } else if (displayName === "CSS") {
+    iconComponent = (
+      <span className="cssIcon">
+        <FaStarOfLife />
+      </span>
+    );
+  }
+
   return (
     <div className="codeEditorContainer">
       <div className="codeEditorTitleWrapper">
-        <div className="codeEditorTitle">{displayName}</div>
+        <div className="codeEditorTitle">
+          {iconComponent} {displayName}
+        </div>
         <button className="codeEditorButton">
           <FaExpand />
         </button>
