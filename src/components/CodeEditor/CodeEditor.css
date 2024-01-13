@@ -1,0 +1,48 @@
+.codeEditorContainer {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 10px;
+  background-color: var(--background-color);
+}
+
+.codeEditorTitleWrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--background-color);
+  color: var(--title-text-color);
+  padding: 0 10px 0 0;
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+
+.codeEditorTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--title-background-color);
+  padding: 10px;
+  border-top: 3px solid var(--highlight-colo);
+}
+
+.codeEditorTitle span {
+  padding: 5px;
+  border-radius: 3px;
+  display: flex;
+  margin-right: 12px;
+  color: var(--title-background-color);
+}
+
+.codeEditorButton {
+  background: none;
+  border: none;
+  color: var(--title-text-color);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.codeMirrorWrapper {
+  flex-grow: 1;
+  overflow: hidden;
+}

@@ -3,9 +3,9 @@ import "codemirror/theme/material.css";
 import "codemirror/mode/xml/xml";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/mode/css/css";
-import { Controlled as ControlledEditor } from "react-codemirror2";
 import "./CodeEditor.css";
-
+import { Controlled as ControlledEditor } from "react-codemirror2";
+import { FaExpand } from "react-icons/fa";
 type CodeEditorProps = {
   language: string;
   displayName: string;
@@ -20,14 +20,17 @@ export function CodeEditor({
   onChange,
 }: CodeEditorProps) {
   return (
-    <div>
-      <div>
-        {displayName}
-        <button>O/C</button>
+    <div className="codeEditorContainer">
+      <div className="codeEditorTitleWrapper">
+        <div className="codeEditorTitle">{displayName}</div>
+        <button className="codeEditorButton">
+          <FaExpand />
+        </button>
       </div>
       <ControlledEditor
         onBeforeChange={onChange}
         value={value}
+        className="codeMirrorWrapper"
         options={{
           lineWrapping: true,
           lint: true,
