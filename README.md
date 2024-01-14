@@ -1,6 +1,6 @@
 # 🖊️ NinjaPen - CodePen Clone
 
-NinjaPen is my own version of CodePen, built for coders who want a straightforward and efficient way to write and test HTML, CSS, and JavaScript. Using React and TypeScript, I made sure NinjaPen is easy to use and gets the job done.
+NinjaPen is my own version of CodePen, built for coders who want a straightforward and efficient way to write and test HTML, CSS, and JavaScript. Using React and TypeScript, I made sure NinjaPen is easy to use and gets the job done. The app is not responsive. 
 
 ## 🚀 Key Features
 
