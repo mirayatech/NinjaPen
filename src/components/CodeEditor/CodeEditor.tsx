@@ -5,6 +5,7 @@ import "codemirror/mode/javascript/javascript";
 import "codemirror/mode/css/css";
 import "./CodeEditor.css";
 import { Controlled as ControlledEditor } from "react-codemirror2";
+import { Editor, EditorChange } from "codemirror";
 import { FaCompress, FaExpand } from "react-icons/fa";
 import { LuParentheses } from "react-icons/lu";
 import { FaStarOfLife } from "react-icons/fa6";
@@ -26,7 +27,8 @@ export function CodeEditor({
 }: CodeEditorProps) {
   const [isOpen, setIsOpen] = useState(true);
 
-  function handleChange(value: string) {
+  // 🍰 editor and data are provided by onBeforeChange event but unused here.
+  function handleChange(editor: Editor, data: EditorChange, value: string) {
     onChange(value);
   }
 
@@ -71,7 +73,6 @@ export function CodeEditor({
         className="codeMirrorWrapper"
         options={{
           lineWrapping: true,
-          lint: true,
           mode: language,
           theme: "material",
           lineNumbers: true,

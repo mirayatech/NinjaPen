@@ -1,26 +1,31 @@
+import useLocalStorage from "../../hooks/useLocalStorage";
 import { CodeEditor } from "../CodeEditor/CodeEditor";
 import "./App.css";
 
 export default function App() {
+  const [html, setHtml] = useLocalStorage("html", "");
+  const [css, setCss] = useLocalStorage("css", "");
+  const [javascript, setJavascript] = useLocalStorage("javascript", "");
+
   return (
     <div className="pane top-pane">
       <CodeEditor
         language="xml"
         displayName="HTML"
-        value="<h1>Hello World</h1>"
-        onChange={console.log}
+        value={html}
+        onChange={setHtml}
       />
       <CodeEditor
         language="css"
         displayName="CSS"
-        value="body { background-color: red; }"
-        onChange={console.log}
+        value={css}
+        onChange={setCss}
       />
       <CodeEditor
         language="javascript"
         displayName="JavaScript"
-        value="const x = 1;"
-        onChange={console.log}
+        value={javascript}
+        onChange={setJavascript}
       />
     </div>
   );
