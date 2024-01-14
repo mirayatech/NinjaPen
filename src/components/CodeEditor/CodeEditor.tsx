@@ -27,7 +27,6 @@ export function CodeEditor({
 }: CodeEditorProps) {
   const [isOpen, setIsOpen] = useState(true);
 
-  // 🍰 editor and data are provided by onBeforeChange event but unused here.
   function handleChange(_editor: Editor, _data: EditorChange, value: string) {
     onChange(value);
   }
