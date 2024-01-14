@@ -1,5 +1,5 @@
 .top-pane {
-  background-color: hsl(225, 6%, 25%);
+  background-color: var(--background-color);
 }
 
 .pane {

@@ -5,6 +5,7 @@
   flex-direction: column;
   padding: 15px 10px;
   background-color: var(--background-color);
+  transition: flex-grow 0.3s ease;
 }
 
 .codeEditorTitleWrapper {
@@ -66,4 +67,14 @@
 
 .CodeMirror {
   height: 100% !important;
+}
+
+.codeEditorContainer.collapsed {
+  flex-grow: 0.2;
+  transition: flex-grow 0.3s ease;
+}
+
+.codeEditorContainer.collapsed .CodeMirror-scroll {
+  position: absolute;
+  overflow: hidden !important;
 }

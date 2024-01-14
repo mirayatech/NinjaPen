@@ -5,10 +5,11 @@ import "codemirror/mode/javascript/javascript";
 import "codemirror/mode/css/css";
 import "./CodeEditor.css";
 import { Controlled as ControlledEditor } from "react-codemirror2";
-import { FaExpand } from "react-icons/fa";
+import { FaCompress, FaExpand } from "react-icons/fa";
 import { LuParentheses } from "react-icons/lu";
 import { FaStarOfLife } from "react-icons/fa6";
 import { RxSlash } from "react-icons/rx";
+import { useState } from "react";
 
 type CodeEditorProps = {
   language: string;
@@ -23,6 +24,12 @@ export function CodeEditor({
   value,
   onChange,
 }: CodeEditorProps) {
+  const [isOpen, setIsOpen] = useState(true);
+
+  function handleChange(value: string) {
+    onChange(value);
+  }
+
   let iconComponent;
 
   if (displayName === "HTML") {
@@ -46,17 +53,20 @@ export function CodeEditor({
   }
 
   return (
-    <div className="codeEditorContainer">
+    <div className={`codeEditorContainer ${isOpen ? "" : "collapsed"}`}>
       <div className="codeEditorTitleWrapper">
         <div className="codeEditorTitle">
           {iconComponent} {displayName}
         </div>
-        <button className="codeEditorButton">
-          <FaExpand />
+        <button
+          className="codeEditorButton"
+          onClick={() => setIsOpen((prevOpen) => !prevOpen)}
+        >
+          {isOpen ? <FaExpand /> : <FaCompress />}
         </button>
       </div>
       <ControlledEditor
-        onBeforeChange={onChange}
+        onBeforeChange={handleChange}
         value={value}
         className="codeMirrorWrapper"
         options={{
