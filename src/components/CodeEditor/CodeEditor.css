@@ -24,7 +24,7 @@
   justify-content: space-between;
   background-color: var(--title-background-color);
   padding: 10px;
-  border-top: 3px solid var(--highlight-colo);
+  border-top: 3px solid var(--highlight-color);
 }
 
 .codeEditorTitle span {
