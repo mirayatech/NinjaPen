@@ -22,3 +22,8 @@ NinjaPen is my own version of CodePen, built for coders who want a straightforwa
 - **Themes**: Let users pick their own color themes, including dark mode.
 - **Collaborate**: Add a way for multiple people to work on the same code.
 - **More Editor Tools**: Add features like auto-complete and error checking.
+
+## 🎬 Video
+
+https://github.com/mirayatech/NinjaPen/assets/71933266/bcad854b-e694-4a34-8003-c3ed5e67287e
+
